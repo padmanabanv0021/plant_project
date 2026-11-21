@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f8f2" />
+  <title>LeafLens — Plant Health Scanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="LeafLens home"><span class="brand-mark">✳</span><span>leaf<span class="brand-light">lens</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <a class="nav-item active" href="#scanner"><span class="nav-icon">⌕</span> Disease scanner</a>
+        <a class="nav-item" href="#history"><span class="nav-icon">◷</span> Scan history <span class="nav-count">04</span></a>
+        <a class="nav-item" href="#library"><span class="nav-icon">▤</span> Plant library</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Need a hand?</strong><p>Learn how to take the best leaf photo for a more accurate scan.</p><a href="#tips">View photo tips <span>↗</span></a></div>
+        <button class="profile"><span class="avatar">JM</span><span class="profile-text"><b>Jordan Miller</b><small>Home gardener</small></span><span class="profile-more">···</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="scanner">
+      <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <b>Disease scanner</b></div><div class="top-actions"><span class="status-dot"></span><span class="system-status">All systems healthy</span><button class="icon-button" aria-label="Notifications">♧<i></i></button></div></header>
+      <div class="page-wrap">
+        <section class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> PLANT HEALTH, MADE SIMPLE</div><h1>Let’s check on your <span>plant.</span></h1><p class="intro">Upload a clear photo of a leaf and get a quick health assessment with helpful next steps.</p></div><div class="date-chip"><span>☼</span> Your garden, at a glance</div></section>
+
+        <section class="dashboard-grid">
+          <div class="panel scan-panel">
+            <div class="panel-heading"><div><span class="step-label">STEP 01 <span>·</span> ADD A PHOTO</span><h2>Start a new scan</h2></div><span class="secure-label">▣ &nbsp;Private &amp; secure</span></div>
+            <div class="upload-area" id="uploadArea" tabindex="0" role="button" aria-label="Choose or drop a plant photo">
+              <input type="file" id="imageInput" accept="image/*" hidden />
+              <div class="upload-content" id="uploadContent"><div class="upload-icon-wrap"><span class="upload-icon">↑</span></div><strong>Drop your leaf photo here</strong><span class="upload-sub">or <button class="browse-button" id="browseButton" type="button">browse files</button> from your device</span><span class="file-note">JPG, PNG or WEBP &nbsp;·&nbsp; Up to 10 MB</span></div>
+              <img id="imagePreview" class="image-preview hidden" alt="Selected plant leaf preview" />
+              <button id="removeImage" class="remove-image hidden" type="button" aria-label="Remove selected image">×</button>
+              <span class="corner corner-tl"></span><span class="corner corner-tr"></span><span class="corner corner-bl"></span><span class="corner corner-br"></span>
+            </div>
+            <div class="form-row"><label for="plantType">Plant type <span class="optional">(optional)</span></label><div class="select-wrap"><span class="select-leaf">❧</span><select id="plantType"><option value="">Choose a plant</option><option>Tomato</option><option>Potato</option><option>Bell pepper</option><option>Grape</option><option>Apple</option><option>Other / not sure</option></select><span class="select-arrow">⌄</span></div></div>
+            <button class="analyze-button" id="analyzeButton" disabled><span>✳</span> Analyze leaf <span class="button-arrow">→</span></button>
+            <div class="privacy-note"><span>♧</span> Your photo is only used for this scan.</div>
+          </div>
+
+          <div class="panel result-panel" id="resultPanel">
+            <div class="panel-heading result-heading"><div><span class="step-label">STEP 02 <span>·</span> YOUR RESULTS</span><h2>Scan results</h2></div><span class="result-badge" id="resultBadge">READY WHEN YOU ARE</span></div>
+            <div class="empty-result" id="emptyResult"><div class="result-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-leaf">❧</div><span class="spark spark-one">✦</span><span class="spark spark-two">✧</span><span class="spark spark-three">·</span></div><h3>Your results will grow here</h3><p>Upload a leaf photo and run an analysis to see its health insights and recommendations.</p><div class="empty-divider"></div><div class="empty-foot"><span class="tiny-shield">◈</span> Results are an estimate, not a substitute for expert advice.</div></div>
+            <div class="scan-result hidden" id="scanResult" aria-live="polite"></div>
+            <div class="analyzing-state hidden" id="analyzingState"><div class="spinner"></div><h3>Taking a closer look…</h3><p>Checking leaf patterns and color</p></div>
+          </div>
+        </section>
+
+        <section class="bottom-grid" id="tips"><div class="tip-card"><div class="tip-icon">◎</div><div><strong>Get the clearest results</strong><p>Use a well-lit photo with one leaf in focus. Avoid shadows and busy backgrounds.</p></div><span class="tip-arrow">↗</span></div><div class="stats-card"><div class="stats-icon">⌁</div><div><strong>Built for curious growers</strong><p>Simple insights to help you make a confident next move.</p></div><span class="stats-decoration">✳</span></div></section>
+        <footer class="footer"><span>© 2025 LeafLens <span class="footer-sep">·</span> Grow with confidence</span><span><a href="#about">About</a><a href="#privacy">Privacy</a><a href="#support">Support</a></span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast hidden" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

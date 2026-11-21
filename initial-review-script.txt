@@ -1,0 +1,21 @@
+INITIAL PROJECT REVIEW — LEAFLENS PLANT DISEASE SCANNER
+
+Opening
+“Hello everyone. This is LeafLens, a frontend concept for a plant disease scanning system. The goal is to give home gardeners a simple place to upload a leaf photo, review a preliminary result, and see practical next steps.”
+
+Problem and goal
+“Plant problems can be difficult to identify early, and gardeners may not know what to check next. This concept focuses on a clear photo upload flow and an easy-to-read health summary. It is designed as an initial project review, so the emphasis today is on the user experience and the proposed workflow.”
+
+Walkthrough
+“The dashboard opens on the Disease Scanner. The user can choose a photo from their device or drag one into the upload area. The file is checked for an image format and a maximum size of 10 megabytes, and a preview appears before analysis. The plant type can also be selected to provide context.
+
+After the user selects Analyze Leaf, the interface shows a short loading state and then a sample result. The result includes a possible finding, a confidence-style indicator, an explanation, and suggested next steps. The scan history and plant library entries are included as navigation placeholders for future development.”
+
+Current scope
+“The current build uses HTML, CSS, and vanilla JavaScript. It includes a responsive layout, image preview, drag-and-drop upload, basic file validation, and interactive demo states. The analysis result is sample content selected by the frontend; no machine-learning model or backend service is connected yet. The percentage is a visual demo indicator and should not be treated as a diagnostic confidence score.”
+
+Next steps
+“The next phase would connect the upload flow to a validated image-analysis API or a trained model, define the supported crops and disease classes, and test the results with representative images. We would also add scan history, accessibility checks, and clear guidance for cases where the system is uncertain. Any production version should describe its limitations and direct users to expert advice when needed.”
+
+Closing
+“That concludes the initial review. I’d like feedback on the upload flow, the amount of detail in the result, and which crops should be supported first. Thank you.”
